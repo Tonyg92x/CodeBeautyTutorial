@@ -72,10 +72,6 @@ public:
 	{
 		PublishedVideoTitles.push_back(title);
 	}
-
-	void DeleteVideo(string title)
-	{
-		PublishedVideoTitles.remove(title);
 	}
 };
 
