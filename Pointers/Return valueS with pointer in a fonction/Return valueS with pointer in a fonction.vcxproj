@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f75a085c-f0d0-46de-b2e4-6ee290ade465}</ProjectGuid>
-    <RootNamespace>OOPPolymorphisam</RootNamespace>
+    <ProjectGuid>{3ce7716c-21d2-4e50-92f4-b0ad5c152e8f}</ProjectGuid>
+    <RootNamespace>ReturnvalueSwithpointerinafonction</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="OOP Polymorphisam.cpp" />
+    <ClCompile Include="Return valueS with pointer in a fonction.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

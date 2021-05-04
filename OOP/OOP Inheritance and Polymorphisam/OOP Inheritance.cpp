@@ -1,7 +1,8 @@
-// OOP Inheritance :    Learning inheritance in object oriented programming.
-// Author :             Anthony Guay
-// Date :               4/30/2021     
-// Credit :             CodeBeaty youtube tutorial @ 8:10
+// OOP Inheritance and Polymorphism :   Learning inheritance in object oriented programming.
+// Author :                             Anthony Guay
+// Date :                               4/30/2021
+// Update :                             5/3/2021     
+// Credit :                             CodeBeaty youtube tutorial @ 8:10
 //                      https://www.youtube.com/watch?v=GQp1zzTwrIg&list=PLp1a4c4ujmk-SMeujXJcdpazIx0NAzThY&ab_channel=CodeBeauty
 
 #include <iostream>
@@ -16,12 +17,14 @@ private:
     list<string> PublishedVideoTitles;
 protected:
     string OwnerName;
+    int ContentQuality;
 public:
     YoutubeChannel(string name, string ownerName)
     {
         Name = name;
         OwnerName = ownerName;
         SubscribersCount = 0;
+        ContentQuality = 0;
     }
 
     void GetInfo()
@@ -54,6 +57,14 @@ public:
     {
         PublishedVideoTitles.push_back(title);
     }
+
+    void CheckAnalytics()
+    {
+        if (ContentQuality < 5)
+            cout << Name << " has a bad quality content." << endl;
+        else 
+            cout << Name << " has great content." << endl;
+    }
 };
 
 class CookingYoutubeChannel :public YoutubeChannel
@@ -72,25 +83,44 @@ public:
     {
         cout << OwnerName << " is practicing cooking, learning new recipes, experimenting with spicies..." <<
             endl;
-
+        ContentQuality++;
         // Here to let OwnerName being accesible (was in the private YoutubeChannel)
         // you need to add the attributes in protected area instead of private.
     }
 };
 
+class SingingYoutubeChannel :public YoutubeChannel
+{
+public:
+    SingingYoutubeChannel(string name, string ownerName) :YoutubeChannel(name, ownerName)
+    {
+
+    }
+
+    void Practice() 
+    {
+        cout << OwnerName << " is taking signing classes, learning new songs, learning how to dance..." << endl;
+        ContentQuality++;
+    }
+};
 
 int main()
 {
-    CookingYoutubeChannel cookingytChannel("PastaCooking", "Tony");
-    cookingytChannel.PublishVideo("Bonne tite pate");
-    cookingytChannel.PublishVideo("Spag grosse boueltte xd.");
-    cookingytChannel.Subscribe();
-    cookingytChannel.Subscribe();
-    cookingytChannel.GetInfo();
-    cookingytChannel.Practice(); // Only avaible in cookingYoutubeChannel
+    CookingYoutubeChannel cookingYtChannel("Amy's Kitch", "Amy");
+    SingingYoutubeChannel singersYtChannel("JohnSings", "John");
 
-    YoutubeChannel ytChannel("Code beauty", "Saldina");
-    // ytChannel.Practice not avaible cause it wasnt creating as a CookingYoutubeChannel.
+    cookingYtChannel.Practice();
+    singersYtChannel.Practice();
+    singersYtChannel.Practice();
+    singersYtChannel.Practice();
+    singersYtChannel.Practice();
+    singersYtChannel.Practice();
+
+    YoutubeChannel* yt1 = &cookingYtChannel;
+    YoutubeChannel* yt2 = &singersYtChannel;
+
+    yt1->CheckAnalytics();
+    yt2->CheckAnalytics();
 
     system("pause>0");
 }

@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="OOP Polymorphisam.cpp">
+    <ClCompile Include="Return valueS with pointer in a fonction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
