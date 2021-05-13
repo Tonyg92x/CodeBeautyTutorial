@@ -1,20 +1,80 @@
- // Dynamic Arrays.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+ // Dynamic Arrays :    Create/change arrays at runtime
+ // Author :            Anthony Guay
+ // Date :              13/5/2021
+ // Credit :            CodeBeauty tutorial @9:34
+ //                     https://www.youtube.com/watch?v=GQp1zzTwrIg&list=PLp1a4c4ujmk-SMeujXJcdpazIx0NAzThY&ab_channel=CodeBeauty
 
 #include <iostream>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+
+    /*
+    *   What does an array    :     It stock an element after an other somewhere
+    *                               in memory. (continuous memory)
+    * 
+    *   Advantage of an array :     Acces the next array will be fast cause it is
+    *                               close from the precedent object in the array.
+    * 
+    *   Disavantage :               What happen if you want to insert or delete
+    *                               one element in the middle of the array 
+                                    whitout breaking the continuousness ?
+                                    It create an other data adresse. If you use
+                                    pointers, you can change the value of an 
+                                    adress instead of creating a new one.
+    * 
+    */
+
+
+    int myarray[5]; // You always need to create a constant for the array.
+                    // You can't do the following :
+
+    /*
+    * int size;
+    * cout << "Size :";
+    * cin >> size;
+    * int myArray[size];
+    */
+
+    // You can do it with a pointer. It create the array in runtime.
+    int size;
+    cout << "Size of the array : ";
+    cin >> size;
+    int* myArray = new int[size];
+
+    // To add element in an array :
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << "Array[" << i << "] = ";
+        cin >> myArray[i];
+    }
+
+    // To write out :
+    for (int i = 0; i < size; i++)
+    {
+        cout << myArray [i] << " ";
+    }
+    cout << endl;
+
+    // Acces with pointer :
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << *(myArray + i) << " ";
+    }
+    cout << endl;
+
+    // Important :
+    //      When you allocate in memory using int* myArray = new int[size]
+    //      You need to unallocate that memory when you don't need it anymore.
+
+    delete[]myArray;
+    myArray = NULL; // Since you have delete the memory in program, you need
+                    // to set the adress to NULL. The delete[]Myarray; let other
+                    // program use the memory so you want to break the link to
+                    // that memory that could create accidental crash.
+
+    system("pause>0");
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
