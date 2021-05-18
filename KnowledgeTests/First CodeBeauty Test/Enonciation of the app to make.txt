@@ -1,8 +1,8 @@
 Date : 13/5/2021
 
 Build a quizz application that has 5 questions.
-Each question give three offered question. Two result will be incorect and one correct.
-You give correct or incorrect after each question.
+Each question give three offered answer. Two result will be incorect and one correct.
+You tell if it is a correct or incorrect answer after each question.
 At the end of your test, you will rate the result of the user.
 
 EZPZ LEMON SQUIZY :P
@@ -10,3 +10,5 @@ EZPZ LEMON SQUIZY :P
 Tips : 
 	Question is a structure with 2 member -> Question and array of the 3 answers.
 	The write out we use Arrays and loop. (Practice Nested for loop).
+
+Time to complete : 45 min 14/5/2021
