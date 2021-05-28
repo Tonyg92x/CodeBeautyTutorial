@@ -1,4 +1,4 @@
-// ReadWrite TextFile:
+// ReadWrite TextFile:      Learning usage of text file
 // Author :                 Anthony Guay
 // Date :                   5/20/2021
 // Credit :                 CodeBeauty tutorial @https://www.youtube.com/watch?v=EaHFhms_Shw&ab_channel=CodeBeautyCodeBeauty
@@ -32,10 +32,11 @@ int main()
     if (myFile.is_open())
     {
         string line;
-        while (getline())
+        while (getline(myFile, line))
         {
-            // 13 min
+            cout << line << endl;
         }
+        myFile.close();
     }
 
     cin.get();
