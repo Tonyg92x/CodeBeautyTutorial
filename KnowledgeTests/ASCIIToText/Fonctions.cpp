@@ -88,19 +88,19 @@ void ReadOption()
 	}
 
 	//  c) Transform string into the actual text.
-	int found = 1;
-	string character;
-	int lettre;
-	bool again = true;
+	int found = 1;		// need a default value
+	string character;	// integer of a char so the ASCII form in string
+	int lettre;			// Character transform into int for char(lettre)
+	bool again = true;  // Loop value (default true until it dosent find " "
 
 	while (again == true)
 	{
-		found = ASCII.find(" ");
-		character = ASCII.substr(0 , found);
-		ASCII.replace(0, found+1, "");
-		lettre = stoi(character);
-		cout << char(lettre);
-		found = ASCII.find(" ");
+		found = ASCII.find(" ");				// Look for a space to know if there is one other character
+		character = ASCII.substr(0 , found);	// Select the character
+		ASCII.replace(0, found+1, "");			// Remove the character of the string
+		lettre = stoi(character);				// Transform the character number in int (ssteam library)
+		cout << char(lettre);					// Write the character in the console
+		found = ASCII.find(" ");				// Loop verification (if there is no space or character found is set to -1)
 		if (found == -1)
 		{
 			again = false;

@@ -25,7 +25,6 @@ using namespace std;
 int main()
 {
 	int option = NULL;
-	string phrase;
 
 	while (option != 3)
 	{
