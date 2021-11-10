@@ -13,7 +13,7 @@
 <h3 align="center">CodeBeauty YT Tutorial</h3>
 
   <p align="center">
-    Learning C++ with a youtuve channel.
+    Learning C++ with a youtube channel.
   </p>
 </div>
 
