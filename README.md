@@ -37,6 +37,7 @@
 ## Authors
 <p align="left">
   Anthony Guay anthony.guay112@gmail.com
+<p align="left">
   Youtube Channel : https://www.youtube.com/c/CodeBeauty
 <p align="right">(<a href="#top">back to top</a>)</p>
 
